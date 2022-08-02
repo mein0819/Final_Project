@@ -6,9 +6,4 @@ The topic we chose concerns trends in the value of homes in the United States an
 ## Overview
 To that end, we cleaned and analyzed data from Zillow using Python, Jupyter Notebook, and pgAdmin. The housing data from Zillow can be found at https://www.zillow.com/research/data/. 
 
-Our team communicated via Slack and met over Zoom, coordinating around each other's schedules and taking advantage of class time to meet and talk through the poroject. 
-
-## Database
-
-
-## Machine Learning 
+Our team elected to maintain communication through Slack and setting up times to meet over Zoom, coordinating around each other's schedules and taking advantage of breakout rooms during class time and office hours to meet and talk through the project. 
