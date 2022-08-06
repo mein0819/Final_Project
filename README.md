@@ -20,4 +20,4 @@ Our team elected to maintain communication through Slack and setting up times to
 The inital database setup included cleaning the datasets and sampling the data within to create the rudimentary data structure, which could then be read into the machine learning model. 
 
 ## Machine Learning
-For this first segment, the machine learning model chosen was a linear regression model. The model took data from the provisional database to conduct some initial tests.
+For this first segment, the machine learning model chosen was an unsupervised clustering model. The model took data from the provisional database to conduct some initial tests.
