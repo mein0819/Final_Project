@@ -1,0 +1,29 @@
+- Five datasets were downloaded from Zillow's Housing Data site
+
+- The ETL process was completed using Jupyter Notebook and Pandas
+
+- I decided that the Home Value Forecast data wasn't going to be used since it is a projected   value and to just focus on using the the known data concerning housing prices, i.e. list       price data, sale price data, home value index data, and rent data.
+  
+- Data sets were arranged in descending order of SizeRank, with columns of RegionID, SizeRank,
+  RegionName, RegionType, StateName (this column was not in the rent data), and columns 
+  showing month and year, starting at varying points going back as far as January 2000      
+  depending on the dataset and ending at June of 2022, the most current data Zillow had when     we started the project.
+     
+- With most of the datasets, cleaning began by checking for null values, calling a function
+  I set up that would print the column name and how many null values if there were any found.
+  These values would eventually be dropped through selecting the date range to be used for all
+  datasets or the dropna function in Pandas. 
+  
+- Data was cleaned by using a regular expression to drop the state abbreviation from the 
+  RegionName column, except for the rent data, which because it lacked a State column, I used
+  a split string function to create two new columns, City and State. Date columns were dropped
+  so the datasets showed data for the past two years. RegionID, RegionType and SizeRank         columns were also dropped on all the DataFrames. Finally, the tables were melted on the date   columns into two columns showing month and value pairs.
+   
+- Furthur analysis was done for each table by calculating the percent change for each value 
+  from the previous month using the pct_change function. This created all rows from June 2020   to have null values so these were dropped for each table, adjusting the data to start in       July 2020 and end in June 2022.
+  
+- The four cleaned DataFrames were exported as csv files to the Resources folder. 
+
+- Tables were merged on the Date, City, and State columns to begin exploring coreleations
+  and then finally all merged into one DataFrame to being testing machine learning models. 
+  
