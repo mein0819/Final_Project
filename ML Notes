@@ -1,0 +1,19 @@
+- The machine learning model chosen at this point is Linear Regression. The purpose of this     model with this data is to predict local rent prices based off of home price data and to       understand how related they may be, and a linear relationship between the input and output     seemed to be the most logical way to explore the data. Regession analysis is highly useful     in trend forecasting, it simplifies the estimation procedure, is easier explain and           understand as far as machine learning models go, and allows control of variables to possibly   determine an unbiased relationship between two or more variables. Limitations in linear       regression include failing to capture the data properly, or underfitting, sensitivity to       outliers, and the assumption that the variables are independent, or linearly seperable.
+  
+- Preprocessing of the data was mostly done in the ETL phase. In a nutshell, all NaN values     were dropped from the tables, unnecessary columns were dropped and the remaining ones were 
+  formatted to match for joining, rent data was plotted with possible features to show any       correlation, and the data was exported to a postgress database and joined together. 
+  
+- The model is connected to the database through an Amazon Web Services RDS that links to 
+  pgAdmin using the sqlalchemy library. Once the table was read in and stored in a 
+  DataFrame, the Date, City, and State columns were dropped. The initial test for the model
+  used the %Change_Rent column for the dependent variable and the remaining columns for the 
+  independent variables. This model produced a low r-squared value due to using calculated
+  fields (the %Change columns). The next test dropped these features for X, leaving 
+  Avg_List_Price, Avg_Sale_Price and HVI, and Avg_Rent as the dependent variable and 
+  produced a much higher r-squared value.
+  
+- The models were initially tested using the default testing and training split of .25, 
+  with the first two tests done without scaling. The third test used a standard scaler
+  to scale the X features, and the fourth test used scaling on a .35 split of the test and
+  train data, which was found through trial and error to see what produced the best 
+  r-squared and mean squared error. 
