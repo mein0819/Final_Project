@@ -17,3 +17,11 @@
   to scale the X features, and the fourth test used scaling on a .35 split of the test and
   train data, which was found through trial and error to see what produced the best 
   r-squared and mean squared error. 
+  
+- Furthur optimization for the model was attempted by adding more data, which was done by 
+  extending the date range of data from the present to July 2020 to the present to 
+  February 2014. This increased the rows of data from 1978 to 8500. The List Price data
+  only goes back to 2018 so this data was not included in the table used for the ML model.
+  The SizeRank column was left in the tables instead of being dropped as originally was done.
+  After reading in the updated joined table, the SizeRank column is binned by population range
+  to be used for visualizations. There was no coorelation between the size and average rent     within the data. Scaling was also further tested by using MinMaxScaler in addition to the     StandarScaler. 
