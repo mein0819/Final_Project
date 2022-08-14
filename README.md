@@ -9,6 +9,9 @@ The question we hope to answer is how rent prices in major metropolitan cities i
 ## Overview
 To that end, we sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/). For example, one of the datasets used in our exploratory analysis is the Zillow Home Value Index dataset (HVI), measures the typical home value in a metropolitcan area in the U.S.
 
+## Project Outline
+For the first segment, our project began with our chosen topic, as outlined above. We moved into the data cleaning and analysis phase and began drafting the machine learning model. For the second segment, we fine-tuned our database, tested the machine learning model, and began the presentation drafting using Google Slides. For the next segment, our team is looking to use Tableau to begin the visualization aspect of the project and finalizing the format of our presentation in Google Slides. 
+
 ### Resources used: 
 - Python 
 - Jupyter Notebook
