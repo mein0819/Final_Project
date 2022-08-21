@@ -39,4 +39,4 @@ Limitations in linear regression include failing to capture the data properly, o
 
 ## Dashboard
 ## Tableau
-Our team chose to use Tableau to visualize our data. The link to our visualization can be found here. 
+Our team chose to use Tableau to visualize our data. The link to our visualization can be found here https://public.tableau.com/app/profile/alexis.simpson/viz/DataBootcampFinal/Dashboard1?publish=yes 
