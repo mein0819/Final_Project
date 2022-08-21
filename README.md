@@ -28,9 +28,6 @@ For the first segment, our project began with our chosen topic, as outlined abov
 - Amazon Web Services
 - Tableau
 
-### Communication and collaboration
-Our team continued a steady level of communication through Slack and setting up times to meet over Zoom, coordinating around each other's schedules and taking advantage of breakout rooms during class time and office hours to meet and talk through the project. 
-
 ## Database
 This segment started with working in ERD, finding connections between tables. We later took some research as joining multiple different columns on four different tables was a new adventure. We used SQL in pgAdmin to execute this code that was connected to our AWS server that all team members have access to in order to better collaborate on our project.
 
