@@ -15,8 +15,7 @@ We sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/
 - Clean data into database
 - Import data into machine learning model
 - Connected postgreSQL database in pgAdmin to an AWS RDS 
-
-For the first segment, our project began with our chosen topic, as outlined above. We moved into the data cleaning and analysis phase and began drafting the machine learning model. For the second segment, we fine-tuned our database, tested the machine learning model, and began the presentation drafting using Google Slides. For the next segment, our team is looking to use Tableau to begin the visualization aspect of the project and finalizing the format of our presentation in Google Slides. 
+- Began creating dashboard in Tableau
 
 ### Resources used: 
 - Python 
