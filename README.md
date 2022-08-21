@@ -37,3 +37,7 @@ This segment started with working in ERD, finding connections between tables. We
 The purpose of this model with this data is to predict local rent prices based off of home price data and to understand how related they may be, and a linear relationship between the input and output seemed to be the most logical way to explore the data. Regression analysis is highly useful in trend forecasting, it simplifies the estimation procedure, is easier explain and understand as far as machine learning models go, and allows control of variables to possibly determine an unbiased relationship between two or more variables.
 
 Limitations in linear regression include failing to capture the data properly, or underfitting, sensitivity to outliers, and the assumption that the variables are independent, or linearly separable. More detail regarding our machine learning model can be found in our presentation [slides](https://docs.google.com/presentation/d/1LMMaxSyZR0QWz_Q7Y-8rrCq-LdCCa8ve6mMGS32Ybpg/edit?usp=sharing).
+
+## Dashboard
+## Tableau
+Our team chose to use Tableau to visualize our data. The link to our visualization can be found here. 
