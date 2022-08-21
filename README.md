@@ -9,6 +9,13 @@ The question we hope to answer is how rent prices in major metropolitan cities i
 We sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/). Zillow is a leader in online home-marketing and sales. For example, one of the datasets used in our exploratory analysis is the Zillow Home Value Index dataset (HVI), measures the typical home value in a metropolitan area in the United States.
 
 ## Project Outline
+- Chose topic
+- Established roles, decided on collaboration across roles as the need arose
+- Choose datasets from Zillow and download
+- Clean data into database
+- Import data into machine learning model
+- Connected postgreSQL database in pgAdmin to an AWS RDS 
+
 For the first segment, our project began with our chosen topic, as outlined above. We moved into the data cleaning and analysis phase and began drafting the machine learning model. For the second segment, we fine-tuned our database, tested the machine learning model, and began the presentation drafting using Google Slides. For the next segment, our team is looking to use Tableau to begin the visualization aspect of the project and finalizing the format of our presentation in Google Slides. 
 
 ### Resources used: 
@@ -20,9 +27,6 @@ For the first segment, our project began with our chosen topic, as outlined abov
 - Google Slides
 - Amazon Web Services
 - Tableau
-
-### Communication and collaboration
-Our team continued a steady level of communication through Slack and setting up times to meet over Zoom, coordinating around each other's schedules and taking advantage of breakout rooms during class time and office hours to meet and talk through the project. 
 
 ## Database
 This segment started with working in ERD, finding connections between tables. We later took some research as joining multiple different columns on four different tables was a new adventure. We used SQL in pgAdmin to execute this code that was connected to our AWS server that all team members have access to in order to better collaborate on our project.
