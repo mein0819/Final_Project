@@ -24,4 +24,21 @@
   only goes back to 2018 so this data was not included in the table used for the ML model.
   The SizeRank column was left in the tables instead of being dropped as originally was done.
   After reading in the updated joined table, the SizeRank column is binned by population range
-  to be used for visualizations. There was no coorelation between the size and average rent     within the data. Scaling was also further tested by using MinMaxScaler in addition to the     StandarScaler. 
+  to be used for visualizations. There was no coorelation between the size and average rent     
+  within the data. Scaling was also further tested by using MinMaxScaler in addition to the    
+  StandarScaler. 
+
+- Post analysis of Deliverable 3's model coefficients revealed a higher degree of importance
+  assigned to the Avg List Price variable than previously assumed so dropping that column
+  was not helping the model. In addition to bringing that column back in it was decided to 
+  test if adding more features would improve the model's performance. Two new datasets were 
+  downloaded and imported as dataframes New Listings, and For Sale Inventory. These were put 
+  through the same ETL process as the previous data and added to the model as features. Due to 
+  data constraints, the final merged data set includes values from 3-31-2018 to  6-30-2022. 
+  
+- The model's R2 and MSE improved from .81 and 36245 to .85 and 28426 by adding 3 features back 
+  into the model despite losing around 6000 rows of data. Average List Price, Average Sale Price
+  and HVI were the features that influenced the model the most, with For Sale Inventory not far 
+  behind the Sale Price, and New Listings having zero or a negative impact on the model, yet 
+  when tested, leaving this feature out the model scores dropped so it was left in for the 
+  final model.  
