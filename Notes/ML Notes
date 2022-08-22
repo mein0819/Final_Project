@@ -28,7 +28,7 @@
   within the data. Scaling was also further tested by using MinMaxScaler in addition to the    
   StandarScaler. 
 
-- Post analysis of Deliverable 3's model coefficients revealed a higher degree of importance
+- Post analysis of Deliverable 2's model coefficients revealed a higher degree of importance
   assigned to the Avg List Price variable than previously assumed so dropping that column
   was not helping the model. In addition to bringing that column back in it was decided to 
   test if adding more features would improve the model's performance. Two new datasets were 
