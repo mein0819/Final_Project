@@ -43,6 +43,8 @@
   when tested, leaving this feature out the model scores dropped so it was left in for the 
   final model.  
 
+Analysis:
+
 - Interpreting the data shows that several of the features are correlated, as can be expected from the 
   housing market. List Price is highly influenced by both Sale Price and the Home Value Index (HVI), 
   just as For Sale Invetory is highly influenced by New Listings. Using regularization helps reduce 
