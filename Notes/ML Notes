@@ -42,3 +42,19 @@
   behind the Sale Price, and New Listings having zero or a negative impact on the model, yet 
   when tested, leaving this feature out the model scores dropped so it was left in for the 
   final model.  
+
+- Interpreting the data shows that several of the features are correlated, as can be expected from the 
+  housing market. List Price is highly influenced by both Sale Price and the Home Value Index (HVI), 
+  just as For Sale Invetory is highly influenced by New Listings. Using regularization helps reduce 
+  the influence of correlated features on the model by distibuting the weight between two variables, 
+  as well as providing stability to the weights. This can be seen in the Ridge Model and the Cross-
+  Validation model. Weights are distributed fairly evenly and variances are rather stable within the 
+  coefficient predictions. New Listings shows the smallest amount of influence, yet is interesting in that 
+  it has a negative effect on the model, suggesting that as new listings increase in a city, rent 
+  decreases. 
+
+- The Mean Absolute Error of the model is 130.20, the Mean Squared Error is 28426.46, the Root Mean 
+  Squared Error is 168.60 and the R2 is .852. It appears the variance of the outliers in the dataset are 
+  contributing the the high MAE, MSE and RMSE. The outliers were kept in the dataset due to not wanting to 
+  eliminate data just to get a better fit for the model when the data was not considered bad or 
+  corrupted data.  
