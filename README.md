@@ -15,7 +15,7 @@ We sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/
 - Clean data into database
 - Import data into machine learning model
 - Connected postgreSQL database in pgAdmin to an AWS RDS 
-- Began creating dashboard in Tableau
+- Chose to create dashboard in Tableau, incorporating machine learning model to visualization
 
 ### Resources used: 
 - Python 
@@ -28,7 +28,7 @@ We sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/
 - Tableau
 
 ## Database
-This segment started with working in ERD, finding connections between tables. We later took some research as joining multiple different columns on four different tables was a new adventure. We used SQL in pgAdmin to execute this code that was connected to our AWS server that all team members have access to in order to better collaborate on our project.
+Our team decided to use postgreSQL and pgAdmin for our database set up, necessitating an ERD table and finding connections between tables. We later took some research as joining multiple different columns on four different tables was a new adventure. We used SQL in pgAdmin to execute this code that was connected to our AWS server that all team members have access to in order to better collaborate on our project.
 
 ## Machine Learning
 ### Model chosen: Linear Regression
