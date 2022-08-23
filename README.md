@@ -28,7 +28,7 @@ We sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/
 - Tableau
 
 ## Database
-Our team decided to use postgreSQL and pgAdmin for our database set up, necessitating an ERD table and finding connections between tables. We later took some research as joining multiple different columns on four different tables was a new adventure. We used SQL in pgAdmin to execute this code that was connected to our AWS server that all team members have access to in order to better collaborate on our project.
+Using postgreSQL necessitated the creation of an ERD, finding connections between tables. We later took some research as joining multiple different columns on four different tables was a new adventure. We used SQL in pgAdmin to execute this code that was connected to our AWS server that all team members have access to in order to better collaborate on our project
 
 ## Machine Learning
 ### Model chosen: Linear Regression
