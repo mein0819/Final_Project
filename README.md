@@ -32,11 +32,10 @@ We sourced and analyzed data from [Zillow](https://www.zillow.com/research/data/
  - Five datasets were downloaded from Zillow's Housing Data site
  - Datasets were arranged in descending order: 
    - SizeRank, with columns of RegionID, SizeRank, RegionName, RegionType, StateName (this column was not in the rent data)
- - Columns showing month and year
- - Starting January 2000 (depending on the dataset), ending June of 2022
+ - Columns were created to show month and year, starting January 2000 (depending on the dataset) and ending June of 2022
 
 ### Data cleaning
- - Checking for null values
+ - Began checking the data for null values
  - Calling a function created to print the column name and how many null values if there were any found
  - These values would eventually be dropped through selecting the date range to be used for all datasets or the dropna function in Pandas
  - Data was cleaned by using a regular expression to drop the state abbreviation from the RegionName column, except for the rent data, which because it lacked a State column, a split string function was used to create two new columns: City and State
@@ -56,8 +55,38 @@ Using postgreSQL necessitated the creation of an ERD, finding connections betwee
 
 The purpose of this model with this data is to predict local rent prices based off of home price data and to understand how related they may be, and a linear relationship between the input and output seemed to be the most logical way to explore the data. Regression analysis is highly useful in trend forecasting, it simplifies the estimation procedure, is easier explain and understand as far as machine learning models go, and allows control of variables to possibly determine an unbiased relationship between two or more variables.
 
-Limitations in linear regression include failing to capture the data properly, or underfitting, sensitivity to outliers, and the assumption that the variables are independent, or linearly separable. More detail regarding our machine learning model can be found in our presentation [slides](https://docs.google.com/presentation/d/1LMMaxSyZR0QWz_Q7Y-8rrCq-LdCCa8ve6mMGS32Ybpg/edit?usp=sharing).
+Limitations in linear regression include failing to capture the data properly, or underfitting, sensitivity to outliers, and the assumption that the variables are independent, or linearly separable. 
+Preprocessing of the data was mostly done in the ETL phase. All NaN values and unnecessary columns were dropped from the tables, and the remaining columns were formatted to match for joining. Rent data was plotted with possible features to show any correlation. The data was exported to a postgres database and joined together. 
+
+The model is connected to the database through an Amazon Web Services RDS that links to pgAdmin using the sqlalchemy library. Once the table was read in and stored in a DataFrame, the Date, City, and State columns were dropped. 
+The initial test for the model used the %Change_Rent column for the dependent variable and the remaining columns for the independent variables. This model produced a low r-squared value due to using calculated fields (the %Change columns). The next test dropped these features for X, leaving Avg_List_Price, Avg_Sale_Price and HVI, and Avg_Rent as the dependent variable and  produced a much higher r-squared value.
+The models were initially tested using the default testing and training split of .25, with the first two tests done without scaling. The third test used a standard scaler to scale the X features, and the fourth test used scaling on a .35 split of the test and train data, which was found through trial and error to see what produced the best r-squared and mean squared error.
+
+Further optimization for the model was attempted by adding more data, which was done by extending the date range of data from the present to July 2020 to the present to February 2014. This increased the rows of data from 1978 to 8500. 
+The List Price data only goes back to 2018 so this data was not included in the table used for the ML model. The SizeRank column was left in the tables instead of being dropped as originally was done.
+After reading in the updated joined table, the SizeRank column is binned by population range to be used for visualizations. There was no correlation between the size and average rent within the data. Scaling was also further tested by using MinMaxScaler in addition to the StandarScaler
+
+### Coefficient importance and its causality
+ - Post analysis of Deliverable 2's model coefficients revealed a higher degree of importance assigned to the Avg List Price variable than previously assumed so dropping that column was not helping the model.
+ - Bringing that column back in tested whether adding more features would improve the model's performance.
+ - Two new datasets were downloaded and imported as dataframes New Listings, and For Sale Inventory. These were put through the same ETL process as the previous data and added to the model as features. Due to data constraints, the final merged data set includes values from 3-31-2018 to  6-30-2022. 
+
+### Model metrics
+The model's R2 and MSE improved from .81 and 36245 to .85 and 28426 by adding 3 features back into the model despite losing around 6000 rows of data. 
+Average List Price, Average Sale Price and HVI were the features that influenced the model the most, though, For Sale Inventory was not far behind the Sale Price. New Listings had a zero or a negative impact on the model, yet when tested, leaving this feature out the model scores dropped so it was left in for the final model.
+
+### Analysis
+Interpreting the data shows that several of the features are correlated, as can be expected from the housing market. List Price is highly influenced by both Sale Price and the Home Value Index (HVI), just as For Sale Inventory is highly influenced by New Listings. Using regularization helps reduce the influence of correlated features on the model by distributing the weight between two variables, as well as providing stability to the weights. This can be seen in the Ridge Model and the Cross-Validation model. Weights are distributed fairly evenly and variances are rather stable within the coefficient predictions. New Listings shows the smallest amount of influence, yet is interesting in that it has a negative effect on the model, suggesting that as new listings increase in a city, rent decreases. 
+The Mean Absolute Error of the model is 130.20, the Mean Squared Error is 28426.46, the Root Mean Squared Error is 168.60 and the R2 is .852. It appears the variance of the outliers in the dataset are contributing the the high MAE, MSE and RMSE. The outliers were kept in the dataset due to not wanting to eliminate data just to get a better fit for the model when the data was not considered bad or corrupted data. 
+### Results
+ - HVI, Average List Price and Average Sale Price coefficients had the highest influence on the model
+ - New Listings  trends  to a negative impact, suggesting that as new listings increase in a city, rent decreases
+ - Ridge and Cross-Validation models show that coefficient weights are distributed fairly evenly and variances are stable
+ - Variance of outliers appear to cause high values of MAE, MSE and RMSE
+ - Selected features of home value data display a linear relationship to average rent 
+ - R2 score of 85% is good but shows 15% unknown variables affecting Avg. Rent
+
 
 ## Dashboard
-## Tableau
+### Tableau
 Our team chose to use Tableau to visualize our data. The link to our visualization can be found [here]( https://public.tableau.com/app/profile/alexis.simpson/viz/DataBootcampFinal/Dashboard1?publish=yes).
