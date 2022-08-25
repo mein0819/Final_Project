@@ -1,7 +1,7 @@
 # Final Project
 
 We chose our topic because it is extremely relevant amidst rising rent prices and an ongoing housing crisis in the United States. Our team is personally invested in this topic as citizens and consumers in the housing market.
-The outcome of the data analysis can help inform our understanding of the market and encourage research into other factors affecting rent prices using the information from our analysis. Our Google Slides Presentation draft for this segment can be viewed [here](https://docs.google.com/presentation/d/1LMMaxSyZR0QWz_Q7Y-8rrCq-LdCCa8ve6mMGS32Ybpg/edit?usp=sharing). 
+The outcome of the data analysis can help inform our understanding of the market and encourage research into other factors affecting rent prices using the information from our analysis. Our Google Slides Presentation can be viewed [here](https://docs.google.com/presentation/d/1LMMaxSyZR0QWz_Q7Y-8rrCq-LdCCa8ve6mMGS32Ybpg/edit?usp=sharing). 
 
 ## Goals
 The question we hope to answer is how rent prices in major metropolitan cities in the United States are affected by home value by analyzing the correlations between various measurements of home value. Our goal is to be able to predict rent price using different measures of home value. Can we use trends in the value of homes in metropolitan areas of the United States to predict correlation with rent prices?
